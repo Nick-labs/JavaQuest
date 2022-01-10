@@ -39,7 +39,7 @@ public class Game {
                 "Он говорит, что ему нечем особо отблагодарить Вас, но не забудет этот благородный поступок.\n",
                 0, 3, 5, 0);
         straight.answers[1] = new Situation("Вы убили солдата",
-                "Хамство и деградация! Упадок морали и нравственности! Но ладно, в его карманах Вы нашли лишь 3 гроша.\n",
+                "Хамство и деградация! Упадок морали и нравственности! Ладно-ладно, ваше право. В его карманах Вы нашли лишь 3 гроша.\n",
                 0, 3, 0, 0);
         straight.answers[2] = new Situation("Вы прошли мимо",
                 "Равнодушный поступок... Дизреспект\n",
@@ -49,11 +49,11 @@ public class Game {
 
         start.answers[2] = new Situation("Вы пошли направо",
                 "Пробираясь сквозь кусты, вы неосторожно оступаетесь и, подвернув ногу, " +
-                        "проваливаетесь в из ниоткуда появившуююся волчью яму.\n" +
+                        "проваливаетесь в из ниоткуда появившуюся волчью яму.\n" +
                         "1 - Смириться и подождать\n" +
                         "2 - Попытаться выбраться\n" +
                         "3 - Громко звать на помощь\n",
-                0, 0, 0, 3);
+                0, 0, 0, 0);
 
         Game game = new Game(new Story(start), character);
         game.start();
@@ -61,8 +61,12 @@ public class Game {
 
     public void start() {
         Scanner scanner = new Scanner(System.in);
-        while (this.story.currentSituation != null) {
-            this.story.currentSituation.show();
+        while (true) {
+            character.K += story.currentSituation.dK;
+            character.K += story.currentSituation.dK;
+            character.K += story.currentSituation.dK;
+//            character.showstatus();
+            story.currentSituation.show();
             if (this.story.isEnd()) return;
             this.story.go(scanner.nextInt());
         }

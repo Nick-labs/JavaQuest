@@ -9,10 +9,10 @@ public class Story {
         this.currentSituation = currentSituation;
     }
 
-    public void go(int asnwerNumber) {
+    public void go(int answerNumber) {
         if (isEnd()) {
             currentSituation = null;
-        } else currentSituation = currentSituation.answers[asnwerNumber - 1];
+        } else currentSituation = currentSituation.answers[answerNumber - 1];
     }
 
     public boolean isEnd() {

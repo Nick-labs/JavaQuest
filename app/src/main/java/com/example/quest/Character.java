@@ -8,4 +8,11 @@ public class Character {
     public Character(String name) {
         this.name = name;
     }
+
+    public Character(String name, int K, int A, int R) {
+        this.name = name;
+        this.K = K;
+        this.A = A;
+        this.R = R;
+    }
 }
